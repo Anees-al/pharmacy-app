@@ -12,12 +12,15 @@ import Questions from '../components/Questions'
 import ShopbyBrands from '../components/ShopbyBrands'
 import Vitamin from '../components/Vitamin'
 import Babecare from '../components/Babecare'
+import Footer from '../components/Footer'
+import {useNavigate} from 'react-router-dom'
 const Home = () => {
+  const navigate=useNavigate();
   return (
     <div>
       <Nav/>
       <div className='flex flex-row mt-10 justify-center gap-10'>
-       <div className='p-6 rounded-lg bg-green-50 font-semibold text-green-500 cursor-pointer w-[200px] hover:border-green-600 hover:border-2 hover:shadow-green-200 hover:shadow transition-all duration-100'>Pharmacy Near Me</div>
+       <div className='p-6 rounded-lg bg-green-50 font-semibold text-green-500 cursor-pointer w-[200px] hover:border-green-600 hover:border-2 hover:shadow-green-200 hover:shadow transition-all duration-100' onClick={()=>navigate('/product')}>All prouducts</div>
        <div className='p-6 rounded-lg bg-yellow-50 font-semibold text-yellow-500 cursor-pointer w-[200px] hover:border-yellow-400 hover:border-2 hover:shadow-yellow-200 hover:shadow transition-all duration-100'>Get 20% off</div>
        <div className='p-6 rounded-lg bg-purple-50 font-semibold text-purple-500 cursor-pointer w-[200px] hover:border-purple-400 hover:border-2 hover:shadow-purple-200 hover:shadow transition-all duration-100'>Doctor Appointment</div>
        <div className='p-6 rounded-lg bg-blue-50 font-semibold text-blue-500 cursor-pointer w-[200px] hover:border-blue-600 hover:border-2 hover:shadow-blue-200 hover:shadow transition-all duration-100'>Health Insurance</div>
@@ -61,6 +64,7 @@ const Home = () => {
        </div>
        <ShopbyBrands/>
        <Questions/>
+        <Footer/>
         
     </div>
     

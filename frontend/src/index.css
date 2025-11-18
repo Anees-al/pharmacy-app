@@ -2,6 +2,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
 @import "tailwindcss";
 
@@ -10,4 +11,11 @@
   font-family: "Inter", sans-serif;
   
 }
+
+.cutive-mono-regular {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
 
