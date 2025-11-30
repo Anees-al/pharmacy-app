@@ -2,7 +2,7 @@ import productModel from "../models/productModel.js";
 
 export const addStock=async(req,res)=>{
        try {
-        const {productName, productDescription,productCode,price,category,brand}=req.body;
+        const {name:productName, description:productDescription,code:productCode,price,category,brand}=req.body;
         if(!productName||!productDescription||!price||!category||!brand){
             res.status(400).json({message:'please fill all the field'})
         }

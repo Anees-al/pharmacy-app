@@ -30,7 +30,7 @@ const Login = () => {
         let url= state==='login'?"http://localhost:3000/api/user/login":"http://localhost:3000/api/user/createuser"
 
         const res=await axios.post(url,formdata);
-        console.log(res.data)
+        
         setformdata({
       username: "",
       email: "",

@@ -8,6 +8,7 @@ import { IoCartSharp } from "react-icons/io5";
 import { useState } from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import { MdAddBusiness } from "react-icons/md";
 
 
 
@@ -90,7 +91,7 @@ fetchusers();
                     </div>
                     <MdInventory size={90} className='text-gray-600 mt-5'/>
                   </div>
-                  <button className='bg-green-600 text-white text-lg font-semibold p-2 rounded-b-lg cursor-pointer hover:bg-green-800'>More info</button>
+                  <button className='bg-green-600 text-white text-lg font-semibold p-2 rounded-b-lg cursor-pointer hover:bg-green-800' onClick={()=>navigate('/stocks')}>More info</button>
               </div>
 
 
@@ -115,6 +116,19 @@ fetchusers();
                     <IoCartSharp size={90} className='text-gray-600 mt-5'/>
                   </div>
                   <button className='bg-red-600 text-white text-lg font-semibold p-2 rounded-b-lg cursor-pointer hover:bg-red-800'>More info</button>
+              </div>
+
+
+
+              <div className='flex flex-col  h-[200px] w-[350px] bg-gradient-to-r from-purple-700 to-purple-400 rounded-md mt-[-200px]'>
+                  <div className='flex flex-row p-4 justify-between flex-1'>
+                    <div className='flex flex-col justify-between '>
+                      
+                        <p className='text-2xl text-white font-semibold mt-6'>Add stocks</p>
+                    </div>
+                    <MdAddBusiness size={90} className='text-gray-600 mt-5'/>
+                  </div>
+                  <button className='bg-purple-600 text-white text-lg font-semibold p-2 rounded-b-lg cursor-pointer hover:bg-purple-800' onClick={()=>navigate('/addstock')}>More info</button>
               </div>
             </div>
 

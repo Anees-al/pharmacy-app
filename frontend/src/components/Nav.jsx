@@ -4,22 +4,24 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { BiSolidOffer } from "react-icons/bi";
 import { motion } from 'framer-motion';
 import logo from '../assets/logo.png'
+import {useNavigate} from 'react-router-dom'
 
 const Nav = () => {
     const [hover,setHover]=useState(null);
     const [hover2,setHover2]=useState(null)
     const navItems= ["Buy Medicine", "Find Doctor", "Lab Tests", "Health Records"];
     const navItems2=["Products","Baby Care","Supplements","Women Care","Personal Care","Health Devices"]
+    const navigate=useNavigate()
   return (
     <div className='flex flex-col w-full ' >
       <div className='flex flex-row justify-between p-2 '>
         
-            <img src={logo} alt="" className='w-10 ml-10 cursor-pointer' />
+            <img src={logo} alt="" className='w-10 ml-10 cursor-pointer'  onClick={()=>navigate('/')} />
 
         <div className=' flex flex-row mr-10 gap-5'>
             <BiSolidOffer size={24} className='mt-2 cursor-pointer'/>
             <MdOutlineShoppingCart size={24} className='mt-2 cursor-pointer'/>
-            <button className=' flex flex-row justify-between py-2 px-4 border w-26 rounded-lg text-[#0077B6] font-semibold cursor-pointer hover:text-white hover:bg-[#0077B6] '><p>Login</p> <p className='mt-1 '><CgProfile size={20} /></p></button>
+            <button className=' flex flex-row justify-between py-2 px-4 border w-26 rounded-lg text-[#0077B6] font-semibold cursor-pointer hover:text-white hover:bg-[#0077B6] ' onClick={()=>navigate('/Login')}><p>Login</p> <p className='mt-1 '><CgProfile size={20} /></p></button>
         </div>
 
       </div>

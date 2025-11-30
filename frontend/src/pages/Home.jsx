@@ -23,8 +23,8 @@ const Home = () => {
        <div className='p-6 rounded-lg bg-green-50 font-semibold text-green-500 cursor-pointer w-[200px] hover:border-green-600 hover:border-2 hover:shadow-green-200 hover:shadow transition-all duration-100' onClick={()=>navigate('/product')}>All prouducts</div>
        <div className='p-6 rounded-lg bg-yellow-50 font-semibold text-yellow-500 cursor-pointer w-[200px] hover:border-yellow-400 hover:border-2 hover:shadow-yellow-200 hover:shadow transition-all duration-100'>Get 20% off</div>
        <div className='p-6 rounded-lg bg-purple-50 font-semibold text-purple-500 cursor-pointer w-[200px] hover:border-purple-400 hover:border-2 hover:shadow-purple-200 hover:shadow transition-all duration-100'>Doctor Appointment</div>
-       <div className='p-6 rounded-lg bg-blue-50 font-semibold text-blue-500 cursor-pointer w-[200px] hover:border-blue-600 hover:border-2 hover:shadow-blue-200 hover:shadow transition-all duration-100'>Health Insurance</div>
-       <div className='p-6 rounded-lg bg-red-50 font-semibold text-red-500 cursor-pointer w-[200px] hover:border-red-600 hover:border-2 hover:shadow-red-200 hover:shadow transition-all duration-100'>Lab Tests</div>
+       <div className='p-6 rounded-lg bg-blue-50 font-semibold text-blue-500 cursor-pointer w-[200px] hover:border-blue-600 hover:border-2 hover:shadow-blue-200 hover:shadow transition-all duration-100' onClick={()=>navigate('/insurance')}>Health Insurance</div>
+       <div className='p-6 rounded-lg bg-red-50 font-semibold text-red-500 cursor-pointer w-[200px] hover:border-red-600 hover:border-2 hover:shadow-red-200 hover:shadow transition-all duration-100' onClick={()=>navigate('/labtests')}>Lab Tests</div>
         
       </div>  
 

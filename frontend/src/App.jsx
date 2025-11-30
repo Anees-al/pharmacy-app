@@ -8,6 +8,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import Admin from './pages/Admin'
 import Userpage from './pages/Userpage'
 import Stockpage from './pages/Stockpage'
+import AddStocks from './pages/AddStocks'
+
+import HealthInsurance from './pages/HealthInsurance'
+import Labtest from './pages/Labtest'
 
 
 
@@ -23,7 +27,11 @@ const App = () => {
  <Route path='/product' element={<ProductPage/>}/>
  <Route path='/admin' element={<Admin/>}/>
  <Route path='/users'  element={<Userpage/>}/>
- <Route path='/products' element={<Stockpage/>}/>
+ <Route path='/stocks' element={<Stockpage/>}/>
+ <Route path='/addstock' element={<AddStocks/>}/>
+ <Route path='/insurance'  element={<HealthInsurance/>}/>
+ <Route path='/labtests'  element={<Labtest/>}/>
+ 
   </Routes>
   
      
