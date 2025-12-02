@@ -12,6 +12,7 @@ import AddStocks from './pages/AddStocks'
 
 import HealthInsurance from './pages/HealthInsurance'
 import Labtest from './pages/Labtest'
+import Cart from './pages/Cart'
 
 
 
@@ -31,6 +32,7 @@ const App = () => {
  <Route path='/addstock' element={<AddStocks/>}/>
  <Route path='/insurance'  element={<HealthInsurance/>}/>
  <Route path='/labtests'  element={<Labtest/>}/>
+ <Route path='/cart'  element={<Cart/>}/>
  
   </Routes>
   

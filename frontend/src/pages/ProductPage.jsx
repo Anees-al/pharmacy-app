@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import Nav from '../components/Nav'
 import axios from 'axios';
+import { cartContext} from '../context/CartContext';
 
 
-const ProductPage = () => {
+const ProductPage = ({product}) => {
+  const  {addCart}=useContext(cartContext)
 
   const [products,setProducts]=useState([]);
   useEffect(()=>{
@@ -19,6 +21,14 @@ const ProductPage = () => {
     }
     fetchProducts()
   },[])
+  
+
+  const handleAdd = (product) => {
+    // Add minimal data you need: id, name, price, quantity
+    addCart({ id: product._id, name: product.productName, price: product.price, quantity: 1 });
+    
+  };
+
   return (
     <div>
         <Nav/>
@@ -65,7 +75,7 @@ const ProductPage = () => {
                   <button className="px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white mt-1 cursor-pointer font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-blue-800 hover:shadow-lg transition-all duration-300">
             Buy Now
           </button>
-          <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-purple-700 text-white mt-2 cursor-pointer font-semibold rounded-lg shadow-md hover:from-purple-600 hover:to-purple-800 hover:shadow-lg transition-all duration-300">
+          <button className="px-6 py-2 bg-gradient-to-r from-purple-500 to-purple-700 text-white mt-2 cursor-pointer font-semibold rounded-lg shadow-md hover:from-purple-600 hover:to-purple-800 hover:shadow-lg transition-all duration-300" onClick={()=>handleAdd(product)}>
   Add to Cart
 </button>
           

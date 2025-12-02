@@ -20,7 +20,7 @@ const Nav = () => {
 
         <div className=' flex flex-row mr-10 gap-5'>
             <BiSolidOffer size={24} className='mt-2 cursor-pointer'/>
-            <MdOutlineShoppingCart size={24} className='mt-2 cursor-pointer'/>
+            <MdOutlineShoppingCart size={24} className='mt-2 cursor-pointer' onClick={()=>navigate('/cart')}/>
             <button className=' flex flex-row justify-between py-2 px-4 border w-26 rounded-lg text-[#0077B6] font-semibold cursor-pointer hover:text-white hover:bg-[#0077B6] ' onClick={()=>navigate('/Login')}><p>Login</p> <p className='mt-1 '><CgProfile size={20} /></p></button>
         </div>
 
