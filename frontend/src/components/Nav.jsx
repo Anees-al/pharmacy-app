@@ -9,7 +9,7 @@ import {useNavigate} from 'react-router-dom'
 const Nav = () => {
     const [hover,setHover]=useState(null);
     const [hover2,setHover2]=useState(null)
-    const navItems= ["Buy Medicine", "Find Doctor", "Lab Tests", "Health Records"];
+    const navItems= [{id:1,name:'Buy Medicine'},{id:2,name:'Find the doctor',link:'/doctor'},{id:3,name:'Lab tests',link:'/labtests'},{id:4,name:'Health records'}];
     const navItems2=["Products","Baby Care","Supplements","Women Care","Personal Care","Health Devices"]
     const navigate=useNavigate()
   return (
@@ -28,8 +28,8 @@ const Nav = () => {
       <hr className='border-gray-200 border-t-2'/>
       <div className='flex flex-row justify-center gap-6 text-sm font-semibold p-2'>
        {navItems.map((navItems,index)=>(
-        <div key={index} className='relative cursor-pointer' onMouseEnter={()=>setHover(index)}  onMouseLeave={()=>setHover(null)}>
-            <p className={`transition-colors duration-300 ${hover === index ? "text-[#0077B6]" : "text-black"}`}>{navItems}</p>
+        <div key={navItems.id} className='relative cursor-pointer' onMouseEnter={()=>setHover(index)}  onMouseLeave={()=>setHover(null)}>
+            <p className={`transition-colors duration-300 ${hover === index ? "text-[#0077B6]" : "text-black"}` } onClick={()=>navigate(navItems.link)}>{navItems.name}</p>
             {hover === index && (
               <motion.div
                 layoutId="underline"

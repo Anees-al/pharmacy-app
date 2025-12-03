@@ -25,7 +25,7 @@ const ProductPage = ({product}) => {
 
   const handleAdd = (product) => {
     // Add minimal data you need: id, name, price, quantity
-    addCart({ id: product._id, name: product.productName, price: product.price, quantity: 1 });
+    addCart({ id: product._id, name: product.productName, price: product.price, quantity: 1,brand:product.brand });
     
   };
 

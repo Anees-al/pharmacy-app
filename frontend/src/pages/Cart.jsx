@@ -32,24 +32,36 @@ const Cart = () => {
               key={order.id}
             >
               <p>{order.name}</p>
-              <p>delizole</p>
+              <p>{order.brand}</p>
               <input type="number" defaultValue={order.quantity} className='w-10' />
               <p>{order.price}</p>
+            
             </div>
           ))}
          <div className='flex flex-col items-end p-5 mt-56'>
-         <div className='flex flex-row gap-15'>
-            <p>Total price</p>
-            <p>700</p>
-         </div>
-         <div className='flex flex-row gap-15'>
-            <p>Total tax</p>
-            <p>40</p>
-         </div>
-         <div className='flex flex-row gap-15'>
-            <p>Grand total</p>
-            <p>740</p>
-         </div>
+          <div className='flex flex-row gap-10'>
+              <p>Total price</p>
+              <p>
+                {cartItem.reduce((sum, item) => sum + item.price * item.quantity, 0)}
+              </p>
+            </div>
+
+            <div className='flex flex-row gap-10'>
+              <p>Total tax</p>
+              <p>
+                {Math.floor(
+                  cartItem.reduce((sum, item) => sum + item.price * item.quantity, 0) * 0.05
+                )}
+              </p>
+            </div>
+         <div className='flex flex-row gap-10'>
+              <p>Grand total</p>
+              <p>
+                {Math.floor(
+                  cartItem.reduce((sum, item) => sum + item.price * item.quantity, 0) * 1.05
+                )}
+              </p>
+            </div>
 
          <button className='bg-black text-white font-semibold py-2 px-7 rounded-lg mt-5 cursor-pointer shadow-md hover:shadow-gray-500'>Proceed to pay</button>
          </div>
