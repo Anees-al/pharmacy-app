@@ -3,6 +3,7 @@ import connectDb from './config/db.js';
 import dotenv from 'dotenv'
 import productRoute from './routes/productRoute.js'
 import userRoutes from './routes/userRoutes.js'
+import doctorRoute from './routes/doctorRoute.js'
 import cookieParser from 'cookie-parser';
 import cors from'cors'
 
@@ -16,6 +17,7 @@ app.use(cors());
 
 app.use('/api/product/',productRoute);
 app.use('/api/user',userRoutes);
+app.use('/api/doctor',doctorRoute);
 
 app.get('/',(req,res)=>{
     res.send("server is running");
