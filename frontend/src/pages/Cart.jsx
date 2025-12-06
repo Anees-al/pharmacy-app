@@ -2,9 +2,56 @@ import React, { useContext } from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { cartContext } from '../context/CartContext'
+import axios from 'axios'
+
 
 const Cart = () => {
     const {cartItem}=useContext(cartContext);
+
+
+    const handlepayment=async(amount)=>{
+      try {
+        const {data:keydata}=await axios.get('http://localhost:3000/api/product/getkey')
+        const {data:orderData}=await axios.post('http://localhost:3000/api/product/payment',{amount})
+      
+      console.log(keydata)
+
+
+      const {order}=orderData;
+      const{key}=keydata;
+      console.log(order)
+       const options = {
+        key, // Replace with your Razorpay key_id
+        amount, // Amount is in currency subunits.
+        currency: 'INR',
+        
+        name: 'Anees',
+        description: 'Test Transaction',
+        order_id: order.id, // This is the order_id created in the backend
+         method: {
+    upi: true
+  },
+        callback_url: 'http://localhost:3000/api/product/paymentverification', // Your success URL
+        prefill: {
+          name: 'Gaurav Kumar',
+          email: 'gaurav.kumar@example.com',
+          contact: '9999999999'
+        },
+        theme: {
+          color: '#0077B6'
+        },
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+    
+
+      } catch (error) {
+        console.log(error.response.data)
+      }
+    }
+
+    
 
   return (
     <div className='flex flex-col'>
@@ -63,7 +110,7 @@ const Cart = () => {
               </p>
             </div>
 
-         <button className='bg-black text-white font-semibold py-2 px-7 rounded-lg mt-5 cursor-pointer shadow-md hover:shadow-gray-500'>Proceed to pay</button>
+         <button className='bg-black text-white font-semibold py-2 px-7 rounded-lg mt-5 cursor-pointer shadow-md hover:shadow-gray-500' onClick={()=>handlepayment(Math.floor( cartItem.reduce((sum, item) => sum + item.price * item.quantity, 0) * 1.05))}>Proceed to pay</button>
          </div>
 
 

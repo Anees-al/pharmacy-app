@@ -11,7 +11,9 @@ import ent from '../assets/ent.jpg'
 import dermatology from '../assets/dermatology.jpg'
 import nuerology from '../assets/nuerology.jpg'
 import  general from '../assets/general.jpg'
+import { useNavigate } from 'react-router-dom';
 const Doctor = () => {
+  const navigate=useNavigate()
   return (
     <div className='flex flex-col'>
         <Nav/>
@@ -55,19 +57,19 @@ const Doctor = () => {
             <p className='text-3xl font-bold text-gray-600 mt-5'>Highlight the Care and Support</p>
 
             <div className='flex flex-row gap-10 mt-6'>
-                <div className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${cardiology})`,backgroundSize:'cover' ,backgroundPosition:'center'}}>
+                <div className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${cardiology})`,backgroundSize:'cover' ,backgroundPosition:'center'}} onClick={()=>navigate('/doctorlist/cardiology')}>
                     <p className='text-sm font-bold text-white'>Cardiology</p>
                 </div>
-                <div  className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${ent})`,backgroundSize:'cover',backgroundPosition:'center'}}>
+                <div  className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${ent})`,backgroundSize:'cover',backgroundPosition:'center'}} onClick={()=>navigate('/doctorlist/ent')}>
                     <p className='text-sm font-bold text-white'>ENT</p>
                 </div>
-                <div  className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${dermatology})`,backgroundSize:'cover',backgroundPosition:'center'}}>
+                <div  className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${dermatology})`,backgroundSize:'cover',backgroundPosition:'center'}}  onClick={()=>navigate('/doctorlist/dermatology')}>
                     <p className='text-sm font-bold text-white'>Dermatology</p>
                 </div>
-                <div  className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${nuerology})`,backgroundSize:'cover',backgroundPosition:'center'}}>
+                <div  className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${nuerology})`,backgroundSize:'cover',backgroundPosition:'center'}} onClick={()=>navigate('/doctorlist/neurology')}>
                   <p className='text-sm font-bold text-white'>Nuerology</p>
                 </div>
-                <div  className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${general})`,backgroundSize:'cover',backgroundPosition:'center'}}>
+                <div  className='flex p-4 border border-gray-100 h-[200px] w-[150px]  rounded-lg items-center justify-center  shadow-gray-500 hover:shadow-lg cursor-pointer' style={{backgroundImage:`url(${general})`,backgroundSize:'cover',backgroundPosition:'center'}} onClick={()=>navigate('/doctorlist/generalmedicine')}>
                     <p className='text-sm font-bold text-white'>General medicine</p>
                 </div>
             </div>

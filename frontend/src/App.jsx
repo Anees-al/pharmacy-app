@@ -14,6 +14,7 @@ import HealthInsurance from './pages/HealthInsurance'
 import Labtest from './pages/Labtest'
 import Cart from './pages/Cart'
 import Doctor from './pages/Doctor'
+import DoctorListing from './pages/DoctorListing'
 
 
 
@@ -35,6 +36,7 @@ const App = () => {
  <Route path='/labtests'  element={<Labtest/>}/>
  <Route path='/cart'  element={<Cart/>}/>
  <Route path='/doctor'  element={<Doctor/>}/>
+ <Route path='/doctorlist/:branch' element={<DoctorListing/>}/>
  
   </Routes>
   
