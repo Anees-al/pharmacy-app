@@ -6,6 +6,7 @@ import userRoutes from './routes/userRoutes.js'
 import doctorRoute from './routes/doctorRoute.js'
 import cookieParser from 'cookie-parser';
 import cors from'cors'
+import Razorpay from'razorpay'
 
 const app=express();
 dotenv.config()
@@ -15,9 +16,18 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-app.use('/api/product/',productRoute);
+app.use('/api/product',productRoute);
 app.use('/api/user',userRoutes);
 app.use('/api/doctor',doctorRoute);
+
+
+export const instance=new Razorpay({
+key_id:process.env.RAZORPAY_API_KEY,
+key_secret:process.env.RAZORPAY_SECRET_KEY
+});
+
+
+
 
 app.get('/',(req,res)=>{
     res.send("server is running");
